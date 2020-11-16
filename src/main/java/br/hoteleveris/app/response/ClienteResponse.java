@@ -5,6 +5,7 @@ public class ClienteResponse extends BaseResponse{
 	private String nome;
 	private String cpf;
 	
+	
 	public String getNome() {
 		return nome;
 	}

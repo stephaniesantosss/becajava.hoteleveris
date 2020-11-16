@@ -124,6 +124,7 @@ public class OcupacaoTeste {
 	
 	BaseResponse response = service.listar();
 	Assertions.assertEquals(200,obj.getStatusCode());
+	
 	}
 	
 }

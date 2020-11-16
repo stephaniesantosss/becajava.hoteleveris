@@ -17,9 +17,9 @@ public class ClienteTeste {
 	@Test
 	public void criarCliente(){
 		ClienteRequest request = new ClienteRequest();
-		request.setNome("nome");
-		request.setCpf("12345678");
-		request.setHash("*******");
+		request.setNome("José");
+		request.setCpf("12345");
+		request.setHash("3456");
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(201,response.getStatusCode());
@@ -29,8 +29,8 @@ public class ClienteTeste {
 	public void criarSemNome(){
 		ClienteRequest request = new ClienteRequest();
 
-		request.setCpf("12345678");
-		request.setHash("*****");
+		request.setCpf("123333");
+		request.setHash("2322");
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(400,response.getStatusCode());
@@ -39,8 +39,8 @@ public class ClienteTeste {
 	@Test
 	public void criarSemCpf(){
 		ClienteRequest request = new ClienteRequest();
-		request.setNome("nome");
-		request.setHash("*****");
+		request.setNome("José");
+		request.setHash("12221");
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(400,response.getStatusCode());
@@ -49,7 +49,7 @@ public class ClienteTeste {
 	@Test
 	public void criarSemHash(){
 		ClienteRequest request = new ClienteRequest();
-		request.setNome("nome");
+		request.setNome("José");
 		request.setCpf("12345678");
 
 		
@@ -62,7 +62,7 @@ public class ClienteTeste {
 		ClienteRequest request = new ClienteRequest();
 		request.setNome(null);
 		request.setCpf("12345678");
-		request.setHash("*****");
+		request.setHash("1234443");
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(400,response.getStatusCode());
@@ -71,9 +71,9 @@ public class ClienteTeste {
 	@Test
 	public void criarCpfNulo(){
 		ClienteRequest request = new ClienteRequest();
-		request.setNome("nome");
+		request.setNome("José");
 		request.setCpf(null);
-		request.setHash("*****");
+		request.setHash("1112");
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(400,response.getStatusCode());
@@ -82,7 +82,7 @@ public class ClienteTeste {
 	@Test
 	public void criarHashNulo(){
 		ClienteRequest request = new ClienteRequest();
-		request.setNome("nome");
+		request.setNome("José");
 		request.setCpf("12345678");
 		request.setHash(null);
 		
@@ -91,20 +91,15 @@ public class ClienteTeste {
 	}
 	
 	@Test
-	public void obterPorId() {
-		BaseResponse response = service.obter(1L);
+	public void obterPorIdZero() {
+		BaseResponse response = service.obter(0l);
 		Assertions.assertEquals(200,response.getStatusCode());
 	}
 	
-	@Test
-	public void obterPorIdzero() {
-		BaseResponse response = service.obter(0L);
-		Assertions.assertEquals(400,response.getStatusCode());
-	}
 	
 	@Test
 	public void obterPorIdNaoExistente() {
-		BaseResponse response = service.obter(999999L);
+		BaseResponse response = service.obter(12121212111l);
 		Assertions.assertEquals(400,response.getStatusCode());
 	}
 

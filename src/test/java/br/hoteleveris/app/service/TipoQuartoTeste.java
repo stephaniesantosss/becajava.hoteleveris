@@ -57,15 +57,7 @@ public class TipoQuartoTeste {
 	}
 	
 	@Test
-	public void obterPorIdzero() {
-		BaseResponse response = service.obter(0L);
-		Assertions.assertEquals(400,response.getStatusCode());
+	public void listar () {
+		
 	}
-	
-	@Test
-	public void obterPorIdNaoExistente() {
-		BaseResponse response = service.obter(999999L);
-		Assertions.assertEquals(400,response.getStatusCode());
-	}
-
 }

@@ -43,18 +43,19 @@ public class ClienteService implements IClienteService {
 		Optional<Cliente> cliente = repository.findById(id);
 		ClienteResponse response = new ClienteResponse();
 
-		if (cliente == null) {
+		if (cliente == null || cliente.isEmpty()) {
 			response.message = "Cliente não encontrado";
 			response.statusCode = 404;
 			return response;
 		}
 
 		response.setNome(cliente.get().getNome());
-		response.setCpf(cliente.get().getCpf());
+		response.setCpf(cliente.get().getCpf());		
 
 		response.message = "Cliente obtido com sucesso";
 		response.statusCode = 200;
 		return response;
+	
 	}
 
 }

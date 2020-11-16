@@ -19,17 +19,17 @@ public class QuartoTeste {
 	private QuartoService service;
 	
 	@Test
-    public void criar() {
+    public void criarVazio() {
         QuartoRequest request =  new QuartoRequest();
-        request.setAndar("20");
+        request.setAndar("");
 
         List<ComodidadeRequest> teste = new ArrayList<ComodidadeRequest>();
         ComodidadeRequest comodidade = new ComodidadeRequest();
         
         teste.add(comodidade);
 
-        request.setNoQuarto(110);
-        request.setSituacao("Ativo");
+        request.setNoQuarto(0);
+        request.setSituacao("");
 
         BaseResponse response = service.inserir(request);
         Assertions.assertEquals(201, response.getStatusCode());
@@ -37,8 +37,8 @@ public class QuartoTeste {
     }
 
 	@Test
-	public void obterPorIdzero() {
-		BaseResponse response = service.obter(0L);
+	public void obterPorIdNullo() {
+		BaseResponse response = service.obter(null);
 		Assertions.assertEquals(400, response.getStatusCode());
 	}
 

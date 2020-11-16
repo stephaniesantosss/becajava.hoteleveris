@@ -55,17 +55,6 @@ public class ComodidadeTeste {
 		BaseResponse response = service.obter(1L);
 		Assertions.assertEquals(200,response.getStatusCode());
 	}
-	
-	@Test
-	public void obterPorIdzero() {
-		BaseResponse response = service.obter(0L);
-		Assertions.assertEquals(400,response.getStatusCode());
-	}
-	
-	@Test
-	public void obterPorIdNaoExistente() {
-		BaseResponse response = service.obter(999999L);
-		Assertions.assertEquals(400,response.getStatusCode());
-	}
+
 
 }

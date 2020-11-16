@@ -29,11 +29,11 @@ public class FaturaService {
 	@Autowired
 	private QuartoRepository quartoRepository;
 	
-	private String hashContaHotel = "123";
+	private String hashContaHotel = "321";
 
 	public void inserir() {	
 		RestTemplate restTemplate = new RestTemplate();
-		String uri = "http://localhost:8081/operacoes/transferencia";
+		String uri = "http://localhost:8081/operacao/transferencia";
 		
 		List<Ocupacao> lista = ocupacaoRepository.findBySituacao("N");		
 		
