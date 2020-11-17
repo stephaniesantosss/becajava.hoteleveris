@@ -26,6 +26,10 @@ public class QuartoComodidade  {
 		this.quarto = quarto;
 		this.comodidade = comodidade;
 	}
+	
+	public QuartoComodidade() {
+		
+	}
 
 	public Long getId() {
 		return Id;

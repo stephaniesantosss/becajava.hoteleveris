@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.hoteleveris.app.request.ClienteRequest;
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.response.ClienteResponse;
 
 @SpringBootTest
 public class ClienteTeste {
@@ -23,6 +24,7 @@ public class ClienteTeste {
 		
 		BaseResponse response = service.inserir(request);
 		Assertions.assertEquals(201,response.getStatusCode());
+	
 	}
 	
 	@Test
@@ -91,16 +93,42 @@ public class ClienteTeste {
 	}
 	
 	@Test
+	public void obterIdMenorQueZero() {
+		Long id = -1L;
+		ClienteResponse response = service.obter(id);
+		Assertions.assertEquals(400, response.getStatusCode());
+		
+	}
+	
+	@Test
 	public void obterPorIdZero() {
 		BaseResponse response = service.obter(0l);
-		Assertions.assertEquals(200,response.getStatusCode());
+		Assertions.assertEquals(404,response.getStatusCode());
+		Assertions.assertEquals("Cliente não encontrado", response.message);
 	}
 	
 	
 	@Test
 	public void obterPorIdNaoExistente() {
 		BaseResponse response = service.obter(12121212111l);
-		Assertions.assertEquals(400,response.getStatusCode());
+		Assertions.assertEquals(404,response.getStatusCode());
+		Assertions.assertEquals("Cliente não encontrado", response.message);
+		
+	}
+	@Test
+	public void obter() {
+		Long id = 2L;
+		ClienteResponse response = service.obter(id);
+		Assertions.assertEquals(200, response.getStatusCode());
+		
+	}
+	@Test
+	public void obterIdInvalido() {
+		Long id = 304L;
+		ClienteResponse response = service.obter(id);
+		Assertions.assertEquals(400, response.getStatusCode());
+		
+		
 	}
 
 }

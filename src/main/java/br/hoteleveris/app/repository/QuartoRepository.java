@@ -17,4 +17,5 @@ public interface QuartoRepository extends JpaRepository<Quarto, Long>{
 	List<Quarto> findBuscarQuartos(@Param("id") Long id);
 	
 	Optional<Quarto> findByNoQuarto(int numero);
+	
 }

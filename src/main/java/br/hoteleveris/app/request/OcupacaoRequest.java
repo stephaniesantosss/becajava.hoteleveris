@@ -7,19 +7,21 @@ import br.hoteleveris.app.model.Quarto;
 
 public class OcupacaoRequest {
 	
-	private Date data;
+	private String data;
 	private int qtdeDiarias;
 	private String situacao;
 	private Long clienteId;
 	private Long quartoId;
-	public Date getData() {
-		return data;
-	}
-	public void setData(Date data) {
-		this.data = data;
-	}
+	
+	
 	public int getQtdeDiarias() {
 		return qtdeDiarias;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
 	}
 	public void setQtdeDiarias(int qtdeDiarias) {
 		this.qtdeDiarias = qtdeDiarias;

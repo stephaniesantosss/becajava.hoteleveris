@@ -38,7 +38,7 @@ public class OcupacaoService {
 		if (request.getData() == null) 
 			return new BaseResponse(400,"A data precisa ser preenchida");
 		
-		if (request.getSituacao() == null) 
+		if (request.getSituacao() == "") 
 			return new BaseResponse(400,"A situação do quarto precisa ser preenchida");
 		
 		Quarto quarto =  new Quarto(request.getQuartoId());

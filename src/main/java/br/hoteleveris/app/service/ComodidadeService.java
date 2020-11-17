@@ -23,7 +23,7 @@ public class ComodidadeService {
 	public BaseResponse inserir(ComodidadeRequest request) { 
 		Comodidade comodidade = new Comodidade(null);
 		
-		if (request.getNome() == null)
+		if (request.getNome() == "")
 			return new BaseResponse(400,"O nome da comodidade precisa ser preenchido");
 	
 		comodidade.setNome(request.getNome());

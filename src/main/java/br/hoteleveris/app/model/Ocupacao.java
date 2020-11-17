@@ -15,7 +15,7 @@ public class Ocupacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date data;
+	private String data;
 	private int qtdeDiarias;
 	private String situacao;
 	
@@ -33,14 +33,6 @@ public class Ocupacao {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
 	}
 
 	public int getQtdeDiarias() {
@@ -73,6 +65,14 @@ public class Ocupacao {
 
 	public void setQuarto(Quarto quarto) {
 		this.quarto = quarto;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 	
 	

@@ -16,41 +16,41 @@ import br.hoteleveris.app.request.TransferenciaRequest;
 
 @Service
 public class FaturaService {
-	
+
 	@Autowired
 	private OcupacaoRepository ocupacaoRepository;
-	
-	@Autowired
-	private ClienteRepository clienteRepository;
-	
-	@Autowired
-	private TipoQuartoRepository tipoQuartoRepository;
-	
-	@Autowired
-	private QuartoRepository quartoRepository;
-	
-	private String hashContaHotel = "321";
 
-	public void inserir() {	
+	public BaseResponse transferencia() {
+
+		BaseResponse response = new BaseResponse();
 		RestTemplate restTemplate = new RestTemplate();
-		String uri = "http://localhost:8081/operacao/transferencia";
-		
-		List<Ocupacao> lista = ocupacaoRepository.findBySituacao("N");		
-		
+		String url = "http://localhost:8081/operacao/transferencia";
+		String hashContaHotel = "123";
+
+		List<Ocupacao> lista = ocupacaoRepository.findBySituacao("N");
+
+
+		// VARREDURA DA LISTA DE OCUPAÇÕES COM VALOR DE SITUAÇÃO "N"
 		for (Ocupacao ocupacao : lista) {
 			double valor = ocupacao.getQuarto().getTipoQuarto().getValor() * ocupacao.getQtdeDiarias();
-			
-			TransferenciaRequest transferencia = new TransferenciaRequest();
-			transferencia.setHashDestino(hashContaHotel);
-			transferencia.setHashOrigem(ocupacao.getCliente().getHash());
-			transferencia.setValor(valor);
 
-			BaseResponse response = restTemplate.postForObject(uri, transferencia, BaseResponse.class);
-			
+			TransferenciaRequest transferenciaRequest = new TransferenciaRequest();
+			transferenciaRequest.setHashDestino(hashContaHotel);
+			transferenciaRequest.setHashOrigem(ocupacao.getCliente().getHash());
+			transferenciaRequest.setValor(valor);
+
+			// REQUISIÇÃO
+			restTemplate.postForObject(url, transferenciaRequest, BaseResponse.class);
+
 			ocupacao.setSituacao("P");
 			ocupacaoRepository.save(ocupacao);
+
 		}
-		
+		response.statusCode = 200;
+		response.message = "Transferencia completa";
+
+		return response;
+
 	}
 
 }

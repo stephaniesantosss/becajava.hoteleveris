@@ -7,17 +7,12 @@ import br.hoteleveris.app.model.Quarto;
 
 public class OcupacaoResponse extends BaseResponse{
 	
-	private Date data;
+	private String data;
 	private int qtdeDiarias;
 	private String situacao;
 	private Cliente clienteId;
 	private Quarto quartoId;
-	public Date getData() {
-		return data;
-	}
-	public void setData(Date data) {
-		this.data = data;
-	}
+	
 	public int getQtdeDiarias() {
 		return qtdeDiarias;
 	}
@@ -42,5 +37,12 @@ public class OcupacaoResponse extends BaseResponse{
 	public void setQuartoId(Quarto quartoId) {
 		this.quartoId = quartoId;
 	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
+	
 
 }

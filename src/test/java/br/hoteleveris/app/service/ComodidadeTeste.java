@@ -23,25 +23,6 @@ public class ComodidadeTeste {
 	}
 	
 	@Test
-	public void criarComodidadeSemNome() {
-		ComodidadeRequest request = new ComodidadeRequest();
-		
-
-
-		BaseResponse response = service.inserir(request);
-		Assertions.assertEquals(400, response.getStatusCode());
-	}
-	
-	@Test
-	public void criarComodidadeNomeNulo() {
-		ComodidadeRequest request = new ComodidadeRequest();
-		request.setNome(null);
-
-		BaseResponse response = service.inserir(request);
-		Assertions.assertEquals(400, response.getStatusCode());
-	}
-	
-	@Test
 	public void criarComodidadeNomeVazio() {
 		ComodidadeRequest request = new ComodidadeRequest();
 		request.setNome("");

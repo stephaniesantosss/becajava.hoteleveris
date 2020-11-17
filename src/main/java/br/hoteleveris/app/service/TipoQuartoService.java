@@ -44,9 +44,12 @@ public class TipoQuartoService {
 		Optional<TipoQuarto> tquarto = repository.findById(id);
 		TipoQuartoResponse response = new TipoQuartoResponse();
 
-		if (tquarto == null) {
-			response.message = "Tipo do quarto não encontrado";
-			response.statusCode = 404;
+		if(id <= 0 || id == null) {
+			response.message= "ID invalido.";
+			return response;
+		}
+		if(tquarto.isEmpty()) {
+			response.message = "Cliente não encontrado.";
 			return response;
 		}
 
