@@ -17,6 +17,7 @@ import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ListOcupacaoResponse;
 import br.hoteleveris.app.response.ListQuartoResponse;
 import br.hoteleveris.app.response.QuartoResponse;
+import br.hoteleveris.app.service.imp.QuartoService;
 
 @SpringBootTest
 public class QuartoTeste {

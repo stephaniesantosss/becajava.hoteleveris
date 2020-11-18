@@ -9,6 +9,7 @@ import br.hoteleveris.app.request.TipoQuartoList;
 import br.hoteleveris.app.request.TipoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
+import br.hoteleveris.app.service.imp.TipoQuartoService;
 
 @SpringBootTest
 public class TipoQuartoTeste {

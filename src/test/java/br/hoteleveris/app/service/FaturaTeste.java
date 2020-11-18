@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.service.imp.FaturaService;
 
 @SpringBootTest
 public class FaturaTeste {

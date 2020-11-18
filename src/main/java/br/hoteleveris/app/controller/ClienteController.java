@@ -1,7 +1,6 @@
 package br.hoteleveris.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.hoteleveris.app.request.ClienteRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ClienteResponse;
-import br.hoteleveris.app.service.ClienteService;
+import br.hoteleveris.app.service.imp.ClienteServiceImp;
+
 
 
 @RestController
@@ -21,7 +21,7 @@ import br.hoteleveris.app.service.ClienteService;
 public class ClienteController {
 	
 	@Autowired
-	private ClienteService _service;
+	private ClienteServiceImp _service;
 	
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody ClienteRequest request) {

@@ -16,7 +16,7 @@ import br.hoteleveris.app.request.SituacaoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ListQuartoResponse;
 import br.hoteleveris.app.response.QuartoResponse;
-import br.hoteleveris.app.service.QuartoService;
+import br.hoteleveris.app.service.imp.QuartoService;
 
 @RestController
 @RequestMapping("/quartos")

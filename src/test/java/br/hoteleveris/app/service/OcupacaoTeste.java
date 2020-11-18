@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.hoteleveris.app.request.OcupacaoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ListOcupacaoResponse;
+import br.hoteleveris.app.service.imp.OcupacaoService;
 
 @SpringBootTest
 public class OcupacaoTeste {
