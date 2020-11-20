@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.hoteleveris.app.response.BaseResponse;
-import br.hoteleveris.app.service.imp.FaturaService;
+import br.hoteleveris.app.service.imp.FaturaServiceImp;
 
 @SpringBootTest
 public class FaturaTeste {
 	
 	@Autowired
-	private FaturaService service;
+	private FaturaServiceImp service;
 	
 	@Test
 	public void Transferencia() {

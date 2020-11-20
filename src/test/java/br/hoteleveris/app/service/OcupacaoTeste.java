@@ -10,13 +10,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.hoteleveris.app.request.OcupacaoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ListOcupacaoResponse;
-import br.hoteleveris.app.service.imp.OcupacaoService;
+import br.hoteleveris.app.service.imp.OcupacaoServiceImp;
 
 @SpringBootTest
 public class OcupacaoTeste {
 
 	@Autowired
-	private OcupacaoService service;
+	private OcupacaoServiceImp service;
 	String dataString = "dd/MM/yyyy";
 	SimpleDateFormat formato = new SimpleDateFormat(dataString);
 	

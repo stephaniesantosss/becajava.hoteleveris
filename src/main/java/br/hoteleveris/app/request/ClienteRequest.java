@@ -4,7 +4,7 @@ public class ClienteRequest {
 	private String nome;
 	private String cpf;
 	private String hash;
-	private String id;
+//	private String id;
 
 	public String getNome() {
 		return nome;
@@ -30,12 +30,12 @@ public class ClienteRequest {
 		this.hash = hash;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+//	public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
 
 }

@@ -18,7 +18,7 @@ import br.hoteleveris.app.response.OcupacaoResponse;
 
 
 @Service
-public class OcupacaoService {
+public class OcupacaoServiceImp {
 
 	@Autowired
 	private OcupacaoRepository repository;

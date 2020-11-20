@@ -18,7 +18,7 @@ import br.hoteleveris.app.response.QuartoResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
 
 @Service
-public class TipoQuartoService {
+public class TipoQuartoServiceImp {
 
 	@Autowired
 	private TipoQuartoRepository repository;

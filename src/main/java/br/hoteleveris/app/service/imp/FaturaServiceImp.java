@@ -15,7 +15,7 @@ import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.request.TransferenciaRequest;
 
 @Service
-public class FaturaService {
+public class FaturaServiceImp {
 
 	@Autowired
 	private OcupacaoRepository ocupacaoRepository;

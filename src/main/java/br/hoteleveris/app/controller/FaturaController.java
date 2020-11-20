@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.hoteleveris.app.response.BaseResponse;
-import br.hoteleveris.app.service.imp.FaturaService;
+import br.hoteleveris.app.service.imp.FaturaServiceImp;
 
 @RestController
 @RequestMapping("/fatura")
 public class FaturaController extends BaseController{
 	
 	@Autowired
-	private FaturaService _service;
+	private FaturaServiceImp _service;
 	
 	@PostMapping
 	public ResponseEntity<BaseResponse> transferencia () {

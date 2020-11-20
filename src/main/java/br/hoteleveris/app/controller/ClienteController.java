@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.hoteleveris.app.request.ClienteRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ClienteResponse;
-import br.hoteleveris.app.service.imp.ClienteServiceImp;
+import br.hoteleveris.app.service.ClienteService;
 
 
 
@@ -21,7 +21,7 @@ import br.hoteleveris.app.service.imp.ClienteServiceImp;
 public class ClienteController {
 	
 	@Autowired
-	private ClienteServiceImp _service;
+	private ClienteService _service;
 	
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody ClienteRequest request) {

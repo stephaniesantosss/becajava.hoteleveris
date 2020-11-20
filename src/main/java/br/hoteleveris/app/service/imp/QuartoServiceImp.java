@@ -21,7 +21,7 @@ import br.hoteleveris.app.response.ListQuartoResponse;
 import br.hoteleveris.app.response.QuartoResponse;
 
 @Service
-public class QuartoService {
+public class QuartoServiceImp {
 
 	@Autowired
 	private QuartoRepository repository;
@@ -77,7 +77,7 @@ public class QuartoService {
 			_repository.save(quartoComodidade);
 		}
 
-		return new BaseResponse(201, "Quarto Comodidade inserido com sucesso");
+		return new BaseResponse(201, "Quarto inserido com sucesso");
 
 	}
 

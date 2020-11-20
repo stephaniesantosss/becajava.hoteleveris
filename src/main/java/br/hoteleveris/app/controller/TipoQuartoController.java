@@ -16,15 +16,15 @@ import br.hoteleveris.app.request.TipoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.QuartoResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
-import br.hoteleveris.app.service.imp.QuartoService;
-import br.hoteleveris.app.service.imp.TipoQuartoService;
+import br.hoteleveris.app.service.imp.QuartoServiceImp;
+import br.hoteleveris.app.service.imp.TipoQuartoServiceImp;
 
 @RestController
 @RequestMapping("/tipoquartos")
 public class TipoQuartoController {
 	
 	@Autowired
-	private TipoQuartoService _service;
+	private TipoQuartoServiceImp _service;
 	
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody TipoQuartoRequest request) {
